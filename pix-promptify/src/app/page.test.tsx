@@ -8,8 +8,7 @@ import Home from './page'
 jest.mock('next/image', () => ({
   __esModule: true,
   default: function MockImage({ alt, ...props }: ImageProps) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img alt={alt} {...props} />
+    return <img alt={alt} {...props} src={props.src?.toString()} />
   }
 }))
 
